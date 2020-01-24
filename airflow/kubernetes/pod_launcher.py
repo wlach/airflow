@@ -176,7 +176,8 @@ class PodLauncher(LoggingMixin):
                 container='base',
                 follow=True,
                 tail_lines=10,
-                _preload_content=False
+                _preload_content=False,
+                _request_timeout=(None, None)
             )
         except BaseHTTPError as e:
             raise AirflowException(
